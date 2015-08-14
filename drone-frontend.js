@@ -21,6 +21,18 @@ function markColors(colors, element) {
     //do the marking
     var canvas= $(element + ' .canvas').get(0);
     var context = canvas. getContext('2d');
+    context.clearRect(0, 0, context.width, context.height);
+}
+
+
+
+for(var i = 0; i < colors.length; i++) {
+    drawRectangle(colors[i], context);
+}
+
+function drawRectangle(rect, context) {
+    context.strokeStyle = rect.color;
+    context.strokeRect(rect.x, rect.y, rect.width, rect.height);
 }
 
 window.addEventListener("load", init);

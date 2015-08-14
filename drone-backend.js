@@ -47,13 +47,54 @@ function fly(robot) {
 
     bot.drone.takeoff();
 //further instructions go here
-    after(10*1000, function(){
-    bot.drone.land();
-    });
-    after(15*1000, function(){
-        bpt.drone.stop();
+
+    after(8*1000, function(){
+        bot.drone.right(0.1);
+        console.log("right");
     });
 
+    after(12*1000, function(){
+        bot.drone.right(0);
+        bot.drone.hover(1);
+    });
+
+    after(16*1000, function(){
+        bot.drone.forward(0.1);
+    });
+
+    after(20*1000, function() {
+        bot.drone.forward(0);
+        bot.drone.hover(1);
+
+    });
+
+    after(24*1000, function(){
+        bot.drone.left(0.1);
+    });
+
+    after(28*1000, function() {
+        bot.drone.left(0);
+        bot.drone.hover(1);
+
+    });
+
+    after(32*1000, function(){
+        bot.drone.back(0.1);
+    });
+
+    after(36*1000, function() {
+        bot.drone.back(0);
+        bot.drone.hover(1);
+
+    });
+
+    after(41*1000, function(){
+    bot.drone.land();
+    });
+
+    after(45*1000, function () {
+    bot.drone.stop();
+    });
 
 }
 
