@@ -1,12 +1,19 @@
 function init() {
-    tracker = initTracker("#example");
-    tracking.track("#example .drone", tracker);
+    var tracker1 = initTracker("#example");
+    tracking.track("#example .drone", tracker1);
 }
+
 
 function initTracker(element) {
     // Initialise a color tracker
     var tracker = new tracking.ColorTracker();
-    
+
+    //we only want rectangles size>20px
+    //tracker .setMinDimension(20);
+
+    //colors we want
+    TRackerUtils.addTrackingColor("#A94A45", "red", tracker);
+    TrackerUtils.addTrackingColor("#5EA24E", "green")
     TrackerUtils.startTrackingColors(tracker);
 
     // Whenever there is a new color detected, mark them
